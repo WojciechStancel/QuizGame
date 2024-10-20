@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="nav-item"><a href="index.html">Strona Główna</a></div>
+            <div class="nav-item dropdown">
+                <a href="#" class="dropbtn">Wyniki</a>
+                <div class="dropdown-content">
+                    <a href="leaderboard.html">Ogółem</a>
+                    <a href="leaderboard_sport.html">Sport</a>
+                    <a href="leaderboard_lotnictwo.html">Lotnictwo</a>
+                    <a href="leaderboard_muzyka.html">Muzyka</a>
+                    <a href="leaderboard_film.html">Film</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="leaderboard_today.html">Najlepsi w tym tygodniu</a></div>
+        </div>
+        <div id="welcome-message" style="display: none;"></div>
+    </nav>
+
+
+
+    <div id="quiz-container">
+        <!-- <h1>Sprawdź swoją wiedzę</h1> -->
+        <div id="category-selection">
+            <h2 class="category-choice">Wybierz kategorię</h2>
+            <button onclick="startQuiz('sport')">Sport</button>
+            <button onclick="startQuiz('muzyka')">Muzyka</button>
+            <button onclick="startQuiz('lotnictwo')">Lotnictwo</button>
+            <button onclick="startQuiz('film')">Film</button>
+            <button onclick="startQuiz('podróże')">Podróże</button>
+        </div>
+
+        <div id="quiz"></div>
+        <div id="results" style="display:none;"></div>
+
+        <div id="save-score" style="display:none;">
+            <h2>Zapisz swój wynik</h2>
+            <form id="saveScoreForm">
+                <input type="text" id="userName" placeholder="Wpisz swoje imię" required>
+                <button type="submit">Zapisz</button>
+            </form>
+            <p id="saveMessage"></p>
+        </div>
+    </div>
+    <div id="score-counter" style="display: none;">Punkty: 0</div>
+
+    <div id="game-over-popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <h2>Nie tym razem!</h2>
+            <button onclick="restartGame()">Gram jeszcze raz</button>
+            <button onclick="goToHome()">Wróć do głównej</button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+
+</body>
+
+</html>
